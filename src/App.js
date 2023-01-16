@@ -40,7 +40,8 @@ function App() {
                     </div>
                 </Content>
 
-                <Footer style={{textAlign: 'center'}}>CRA ©{new Date().getFullYear()} Created by Sagor Chandra Paul</Footer>
+                <Footer style={{textAlign: 'center'}}>CRA ©{new Date().getFullYear()} Created by Sagor Chandra
+                    Paul</Footer>
             </Layout>
         </Layout>
     );

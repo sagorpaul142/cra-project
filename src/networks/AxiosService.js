@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = "https://fakestoreapi.com/";
+const base_url = "https://fakestoreapi.com";
 let requestHeader = {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Accept-Language': 'en',
