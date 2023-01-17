@@ -2,6 +2,7 @@ import {Layout, Menu, theme} from "antd"
 import {UnorderedListOutlined} from "@ant-design/icons/lib/icons"
 import {useNavigate} from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import {ToastContainer} from "react-toastify";
 
 const {Header, Content, Footer, Sider} = Layout;
 
@@ -28,7 +29,7 @@ function App() {
 
                     items={[
                         {label: "Products", key: "/", icon: <UnorderedListOutlined/>},
-                        {label: "Add Products", key: "/add", icon: <UnorderedListOutlined/>}
+                        {label: "Add Products", key: "/add-product", icon: <UnorderedListOutlined/>}
                     ]}
                 />
             </Sider>
@@ -43,6 +44,15 @@ function App() {
                 <Footer style={{textAlign: 'center'}}>CRA ©{new Date().getFullYear()} Created by Sagor Chandra
                     Paul</Footer>
             </Layout>
+            <ToastContainer
+                position={"top-right"}
+                autoClose={5000}
+                closeOnClick={true}
+                pauseOnHover={true}
+                draggable={true}
+                hideProgressBar={false}
+                theme={"colored"}
+            />
         </Layout>
     );
 }

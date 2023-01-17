@@ -1,11 +1,13 @@
 import {useEffect, useState} from "react";
 import AxiosService from "../networks/AxiosService";
 import ApiUrlServices from "../networks/ApiUrlServices";
-import {Space, Table} from "antd";
+import {Button, Space, Table} from "antd";
+import {useNavigate} from "react-router-dom";
 
 const HomePage = () => {
     const [products, setProducts] = useState([])
     const [pageLoader, setPageLoader] = useState(true)
+    const history = useNavigate()
     useEffect(() => {
         AxiosService.get(ApiUrlServices.GET_ALL_PRODUCTS)
             .then(response => {
@@ -40,10 +42,17 @@ const HomePage = () => {
         },
         {
             title: 'Action',
+            fixed: 'right',
             key: 'action',
+            width: 100,
             render: (_, record) => (
                 <Space size="middle">
-                    <a onClick={() => console.log(record.key)}>Edit</a>
+                    <Button type={"primary"} onClick={() => {
+                        console.log(record.key)
+                        history(`/edit/${record.key}`)
+                    }}>
+                        Edit
+                    </Button>
                 </Space>
             ),
         },
@@ -61,7 +70,10 @@ const HomePage = () => {
     });
     const dataMerge = [].concat.apply([], data);
 
-    return (<Table dataSource={dataMerge} columns={columns} loading={pageLoader}/>);
+    return (<Table dataSource={dataMerge} columns={columns} loading={pageLoader} scroll={{
+      x: 1500,
+      y: 600,
+    }}/>);
 };
 
 export default HomePage;

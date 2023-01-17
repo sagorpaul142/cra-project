@@ -13,7 +13,7 @@ async function get(url) {
 }
 
 async function post(url, body) {
-    return axios.post(base_url + url, body, {
+    return axios.post(base_url + url, JSON.stringify(body), {
         headers: requestHeader
     });
 }
