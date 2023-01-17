@@ -110,7 +110,7 @@ const AddProduct = () => {
                             message: 'Product image is required!',
                         },
                         {
-                            pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|.jpeg|gif|png)/g,
+                            pattern: /(http[s]?:\/\/.*\.(?:png|jpg|gif|svg|jpeg))/i,
                             message: 'Please enter valid image url'
                         }
                     ]}

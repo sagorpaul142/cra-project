@@ -1,5 +1,5 @@
 import {Layout, Menu, theme} from "antd"
-import {UnorderedListOutlined} from "@ant-design/icons/lib/icons"
+import {UnorderedListOutlined, AppstoreAddOutlined} from "@ant-design/icons/lib/icons"
 import {useNavigate} from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import {ToastContainer} from "react-toastify";
@@ -25,11 +25,11 @@ function App() {
                     }}
                     theme="light"
                     mode="inline"
-                    defaultSelectedKeys={"/"}
+                    defaultSelectedKeys={[window.location.pathname]}
 
                     items={[
                         {label: "Products", key: "/", icon: <UnorderedListOutlined/>},
-                        {label: "Add Products", key: "/add-product", icon: <UnorderedListOutlined/>}
+                        {label: "Add Products", key: "/add-product", icon: <AppstoreAddOutlined />}
                     ]}
                 />
             </Sider>
