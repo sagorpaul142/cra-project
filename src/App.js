@@ -8,9 +8,7 @@ const {Header, Content, Footer, Sider} = Layout;
 
 function App() {
     const navigate = useNavigate();
-    const {
-        token: {colorBgContainer},
-    } = theme.useToken();
+    const {token: {colorBgContainer}} = theme.useToken();
     return (
         <Layout>
             <Sider

@@ -16,7 +16,6 @@ const AddProduct = () => {
         setLoader(true)
         AxiosServices.post(ApiUrlServices.ADD_PRODUCT, payload)
             .then(res => {
-                console.log(res)
                 setLoader(false)
                 toast.success("Product add Successfully")
                 histroy("/")

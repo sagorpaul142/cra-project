@@ -48,7 +48,6 @@ const HomePage = () => {
             render: (_, record) => (
                 <Space size="middle">
                     <Button type={"primary"} onClick={() => {
-                        console.log(record.key)
                         history(`/edit/${record.key}`)
                     }}>
                         Edit

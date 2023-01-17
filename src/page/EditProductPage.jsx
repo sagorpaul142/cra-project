@@ -8,6 +8,8 @@ import {toast} from "react-toastify";
 import LoadingOverlay from 'react-loading-overlay';
 
 const {TextArea} = Input;
+
+LoadingOverlay.propTypes = undefined
 const EditProductPage = () => {
     const [pageLoader, setPageLoader] = useState(true)
     const [loader, setLoader] = useState(false)
@@ -41,7 +43,6 @@ const EditProductPage = () => {
         setLoader(true)
         AxiosService.put(ApiUrlServices.UPDATE_SINGLE_PRODUCT(id), payload)
             .then(res => {
-                console.log(res)
                 histroy("/")
                 toast.success('Product Update successfully');
             })
@@ -57,7 +58,7 @@ const EditProductPage = () => {
             <LoadingOverlay
                 active={pageLoader}
                 spinner
-                text='Loading your content...'
+                text='Loading'
             >
                 <div>
                     <Button type="primary"
@@ -180,7 +181,7 @@ const EditProductPage = () => {
                                     style={{fontSize: 15}}
                                     spin
                                 />}
-                                Submit
+                                Update
                             </Button>
                         </Form.Item>
 
